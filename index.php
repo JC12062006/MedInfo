@@ -7,14 +7,14 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'Accueil';
 
 switch($page){
 
-    case '' :
-        require_once("");
+    case 'dashboardMedecin' :
+        require_once("view/medecin/dashboardMedecin.php");
         break;
-    case '' :
-        require_once("");
+    case 'demandesRdv' :
+        require_once("view/medecin/demandesRdv.php");
         break;
-    case '' :
-        require_once("");
+    case 'disponibilites' :
+        require_once("view/medecin/disponibilites.php");
         break;
     case '' :
         require_once("");
