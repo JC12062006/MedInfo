@@ -12,7 +12,7 @@ CREATE TABLE utilisateur(
     prenom           VARCHAR(155)       NOT NULL,
     email            VARCHAR(155)       NOT NULL UNIQUE,
     hash_password    VARCHAR(255)       NOT NULL,
-    date_creation    DATE               NOT NULL,
+    date_creation    TIMESTAMP          NOT NULL CURRENT_TIMESTAMP,
     telephone        VARCHAR(20)        NOT NULL UNIQUE,
     role             ENUM('Admin','Patient','Medecin','Secretaire') NOT NULL,
     date_naissance   DATE               NOT NULL
@@ -99,7 +99,7 @@ CREATE TABLE creneau(
 CREATE TABLE consultations(
 
     id_consultation INT  AUTO_INCREMENT PRIMARY KEY,
-    date_saisie     DATE                NOT NULL,
+    date_saisie     TIMESTAMP           NOT NULL DEFAULT CURRENT_TIMESTAMP,
     compte_rendu    VARCHAR(1000)       NOT NULL,
     tension         VARCHAR(55)         NOT NULL,
     poids           VARCHAR(55)         NOT NULL,
