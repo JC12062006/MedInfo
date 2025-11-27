@@ -12,7 +12,7 @@ CREATE TABLE utilisateur(
     prenom           VARCHAR(155)       NOT NULL,
     email            VARCHAR(155)       NOT NULL UNIQUE,
     hash_password    VARCHAR(255)       NOT NULL,
-    date_creation    TIMESTAMP          NOT NULL CURRENT_TIMESTAMP,
+    date_creation    TIMESTAMP          NOT NULL DEFAULT CURRENT_TIMESTAMP,
     telephone        VARCHAR(20)        NOT NULL UNIQUE,
     role             ENUM('Admin','Patient','Medecin','Secretaire') NOT NULL,
     date_naissance   DATE               NOT NULL
@@ -62,7 +62,7 @@ CREATE TABLE rendez_vous(
     id_rdv        INT  AUTO_INCREMENT PRIMARY KEY,
     date_creation DATE NOT NULL,
     motif         VARCHAR(255) NOT NULL,
-    statut        ENUM('a confirmer','confirmé','annullé','honoré','absent') NOT NULL,
+    statut        ENUM('a confirmer','confirmé','annulé','honoré','absent') NOT NULL,
     origine       VARCHAR(155) NOT NULL,
     fk_id_patient INT NOT NULL,
     fk_id_medecin INT NOT NULL,
@@ -75,7 +75,7 @@ CREATE TABLE rendez_vous(
 CREATE TABLE salle(
 
     id_salle   INT  AUTO_INCREMENT PRIMARY KEY,
-    libellle   VARCHAR(50) NOT NULL,
+    libelle   VARCHAR(50) NOT NULL,
     etage      VARCHAR(50) NOT NULL
 
 );
