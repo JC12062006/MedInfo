@@ -49,7 +49,7 @@ CREATE TABLE patient(
 
     id_patient      INT AUTO_INCREMENT PRIMARY KEY,
     adresse         VARCHAR(255) NOT NULL,
-    num_secu        VARCHAR(15)  NOT NULL,
+    num_secu        VARCHAR(15)  NOT NULL UNIQUE,
     sexe            ENUM('homme','femme') NULL,
     fk_id_utilisateur INT NOT NULL,
     FOREIGN KEY (fk_id_utilisateur) REFERENCES utilisateur(id_utilisateur)
@@ -62,7 +62,7 @@ CREATE TABLE rendez_vous(
     id_rdv        INT  AUTO_INCREMENT PRIMARY KEY,
     date_creation DATE NOT NULL,
     motif         VARCHAR(255) NOT NULL,
-    statut        ENUM('a confirmer','confirmé','annulé','honoré','absent') NOT NULL,
+    statut        ENUM('a_confirmer','confirmé','annulé','honoré','absent') NOT NULL,
     origine       VARCHAR(155) NOT NULL,
     fk_id_patient INT NOT NULL,
     fk_id_medecin INT NOT NULL,
