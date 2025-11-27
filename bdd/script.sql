@@ -105,8 +105,9 @@ CREATE TABLE consultations(
     poids           VARCHAR(55)         NOT NULL,
     observations    VARCHAR(1000),
     fk_id_medecin   INT                 NOT NULL,
-    FOREIGN KEY (fk_id_medecin) REFERENCES medecin(id_medecin)
-
+    fk_id_patient   INT                 NOT NULL,
+    FOREIGN KEY (fk_id_medecin) REFERENCES medecin(id_medecin),
+    FOREIGN KEY (fk_id_patient) REFERENCES patient(id_patient)
 );
 
 -- Table documentation
