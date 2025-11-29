@@ -1,5 +1,7 @@
 <?php 
 
+define('ROOT', __DIR__ . '/');
+
 session_start();
 
 require_once("view/commun/header.php");
@@ -16,14 +18,14 @@ switch($page){
     case 'disponibilites' :
         require_once("view/medecin/disponibilites.php");
         break;
-    case '' :
-        require_once("");
+    case 'connexion' :
+        require_once("view/utilisateur/connexion.php");
         break;
-    case '' :
-        require_once("");
+    case 'inscription' :
+        require_once("view/utilisateur/inscription.php");
         break;
-    case '' :
-        require_once("");
+    case 'controllerPatient' :
+        require_once("controller/patient/controller.patient.php");
         break;
     case '' :
         require_once("");

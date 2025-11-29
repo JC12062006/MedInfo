@@ -52,7 +52,7 @@ CREATE TABLE patient(
     num_secu        VARCHAR(15)  NOT NULL UNIQUE,
     sexe            ENUM('homme','femme') NULL,
     fk_id_utilisateur INT NOT NULL,
-    FOREIGN KEY (fk_id_utilisateur) REFERENCES utilisateur(id_utilisateur)
+    FOREIGN KEY (fk_id_utilisateur) REFERENCES utilisateur(id_utilisateur) ON DELETE CASCADE
 
 );
 
