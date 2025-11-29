@@ -7,15 +7,17 @@ USE medinfo;
 -- table utilisateur
 CREATE TABLE utilisateur(
    
-    id_utilisateur   INT AUTO_INCREMENT PRIMARY KEY,
-    nom              VARCHAR(155)       NOT NULL,
-    prenom           VARCHAR(155)       NOT NULL,
-    email            VARCHAR(155)       NOT NULL UNIQUE,
-    hash_password    VARCHAR(255)       NOT NULL,
-    date_creation    TIMESTAMP          NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    telephone        VARCHAR(20)        NOT NULL UNIQUE,
-    role             ENUM('Admin','Patient','Medecin','Secretaire') NOT NULL,
-    date_naissance   DATE               NOT NULL
+    id_utilisateur          INT AUTO_INCREMENT PRIMARY KEY,
+    nom                     VARCHAR(155)       NOT NULL,
+    prenom                  VARCHAR(155)       NOT NULL,
+    email                   VARCHAR(155)       NOT NULL UNIQUE,
+    hash_password           VARCHAR(255)       NOT NULL,
+    date_creation           TIMESTAMP          NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    telephone               VARCHAR(20)        NOT NULL UNIQUE,
+    role                    ENUM('Admin','Patient','Medecin','Secretaire') NOT NULL,
+    date_naissance          DATE               NOT NULL
+    reset_token             VARCHAR(64)        NULL,
+    reset_token_expiration  DATETIME           NULL;
 
 );
 

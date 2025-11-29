@@ -27,11 +27,11 @@ switch($page){
     case 'controllerPatient' :
         require_once("controller/patient/controller.patient.php");
         break;
-    case '' :
-        require_once("");
+    case 'mdpOubliee' :
+        require_once("view/utilisateur/mdpOubliee.php");
         break;
-    case '' :
-        require_once("");
+    case 'reinitMdp' :
+        require_once("view/utilisateur/reinitialisationMdp.php");
         break;
     case '' :
         require_once("");

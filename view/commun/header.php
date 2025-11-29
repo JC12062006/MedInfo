@@ -9,6 +9,9 @@
 
     <!-- STyles -->    
     <link rel="stylesheet" href="public/styles.connexion.css">
+    <link rel="stylesheet" href="public/styles.inscription.css">
+    <link rel="stylesheet" href="public/styles.mdpOublie.css">
+    <link rel="stylesheet" href="public/styles.reinitialisationMdp.css">
 
 
     <title>MedInfo</title>

@@ -8,7 +8,7 @@
         <!-- Colonne gauche : branding / message -->
         <section class="medinfo-register-intro">
             <div class="medinfo-logo">
-                <span class="medinfo-logo-icon">+</span>
+                <span class="medinfo-logo-icon">M</span>
                 <span class="medinfo-logo-text">MedInfo</span>
             </div>
             <h1 class="medinfo-register-title">
