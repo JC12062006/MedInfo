@@ -64,7 +64,7 @@ class patientController{
        
         if ($user) {
             session_start();
-            $_SESSION['user'] = $user;
+            $_SESSION['user'] = $user[0];
             header('Location:https://127.0.0.1/medinfo/index.php?page=accueil');
             exit;
         } else {

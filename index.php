@@ -72,7 +72,7 @@ switch($page){
         break;
     case 'deconnexion':
         session_destroy();
-        header('Location:https://127.0.0.1/stokage/index.php?page=accueil');
+        header('Location:https://127.0.0.1/medinfo/index.php?page=accueil');
         break;
 }
 
