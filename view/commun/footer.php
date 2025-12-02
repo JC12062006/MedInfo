@@ -30,18 +30,8 @@
             <div class="medinfo-footer-column">
                 <h3 class="medinfo-footer-title">Patients</h3>
                 <ul class="medinfo-footer-list">
-                    <li><a href="index.php?page=priseRdv" class="medinfo-footer-link">Prendre rendez-vous</a></li>
+                    <li><a href="index.php?page=prendreRdv" class="medinfo-footer-link">Prendre rendez-vous</a></li>
                     <li><a href="index.php?page=monEspace" class="medinfo-footer-link">Mon espace santé</a></li>
-                    <li><a href="index.php?page=faq" class="medinfo-footer-link">Questions fréquentes</a></li>
-                </ul>
-            </div>
-
-            <div class="medinfo-footer-column">
-                <h3 class="medinfo-footer-title">Centre médical</h3>
-                <ul class="medinfo-footer-list">
-                    <li><a href="index.php?page=aPropos" class="medinfo-footer-link">À propos</a></li>
-                    <li><a href="index.php?page=specialites" class="medinfo-footer-link">Spécialités</a></li>
-                    <li><a href="index.php?page=contact" class="medinfo-footer-link">Contact & accès</a></li>
                 </ul>
             </div>
         </div>
@@ -62,11 +52,13 @@
                 </a>
                 <a href="index.php?page=mentionsLegales" class="medinfo-footer-bottom-link">Mentions légales</a>
 
-                <!-- Social (optionnel, remplace les # par tes liens) -->
+                <!-- 
+                Social (optionnel, remplace les # par tes liens) 
                 <div class="medinfo-footer-socials">
-                    <a href="#" class="medinfo-footer-social-link" aria-label="LinkedIn MedInfo">in</a>
+                    <a href="#" class="medinfo-footer-social-link" aria-label="LinkedIn MedInfo">In</a>
                     <a href="#" class="medinfo-footer-social-link" aria-label="Facebook MedInfo">f</a>
                 </div>
+                -->
             </div>
         </div>
     </div>

@@ -122,3 +122,44 @@ CREATE TABLE documentation(
     FOREIGN KEY (fk_id_patient) REFERENCES patient(id_patient)
 
 );
+
+
+-- jeux de données pour alimenter la BDD
+INSERT INTO specialite (id_specialite, libelle) VALUES
+(1,  'Médecine générale'),
+(2,  'Cardiologie'),
+(3,  'Dermatologie'),
+(4,  'Gynécologie'),
+(5,  'Pédiatrie'),
+(6,  'Oto-rhino-laryngologie (ORL)'),
+(7,  'Ophtalmologie'),
+(8,  'Rhumatologie'),
+(9,  'Endocrinologie'),
+(10, 'Gastro-entérologie'),
+(11, 'Pneumologie'),
+(12, 'Neurologie'),
+(13, 'Psychiatrie'),
+(14, 'Urologie'),
+(15, 'Néphrologie'),
+(16, 'Oncologie'),
+(17, 'Gériatrie'),
+(18, 'Allergologie'),
+(19, 'Radiologie'),
+(20, 'Médecine du sport');
+
+
+INSERT INTO utilisateur 
+(id_utilisateur, nom, prenom, email, hash_password, telephone, role, date_naissance) VALUES
+(100, 'Dupont',  'Marie',   'marie.dupont@medinfo.fr',  'e937073df714290723d91595945f9359cedaf69e', '0600000001', 'medecin', '1980-03-12'),
+(101, 'Martin',  'Paul',    'paul.martin@medinfo.fr',   'a007fbfad9cd4a4c8eb330f95266c2655404830b', '0600000002', 'medecin', '1975-07-25'),
+(102, 'Leroy',   'Sophie',  'sophie.leroy@medinfo.fr',  '91b6657ccd7093b33caabeeda4bc7b12ccd387c8', '0600000003', 'medecin', '1983-11-05'),
+(103, 'Rossi',   'Alessio', 'alessio.rossi@medinfo.fr', 'a176fa6083c16c5ce397b0a2582fc8930011c6c7', '0600000004', 'medecin', '1978-02-18'),
+(104, 'Nguyen',  'Linh',    'linh.nguyen@medinfo.fr',   '39663005e9ffd5d604bde4c2f093b21b94e1c8a8', '0600000005', 'medecin', '1986-09-09');
+
+INSERT INTO medecin 
+(id_medecin, id_utilisateur, id_specialite, numero_rpps, salle_cabinet) VALUES
+(1, 100, 1, '10000000001', 'Cabinet 101'),
+(2, 101, 2, '10000000002', 'Cabinet 202'),
+(3, 102, 3, '10000000003', 'Cabinet 303'),
+(4, 103, 4, '10000000004', 'Cabinet 404'),
+(5, 104, 5, '10000000005', 'Cabinet 505');
