@@ -1,2 +1,76 @@
+<footer class="medinfo-footer">
+    <div class="medinfo-footer-inner">
+        <!-- Bloc logo + phrase rassurante -->
+        <div class="medinfo-footer-brand">
+            <a href="index.php" class="medinfo-logo">
+                <span class="medinfo-logo-icon">M</span>
+                <span class="medinfo-logo-text">MedInfo</span>
+            </a>
+            <p class="medinfo-footer-tagline">
+                Prenez rendez-vous simplement dans votre centre médical pluridisciplinaire,
+                en toute sécurité et en quelques clics.
+            </p>
+            <div class="medinfo-footer-badge">
+                <span class="medinfo-footer-badge-dot"></span>
+                Centre médical certifié &nbsp;•&nbsp; Données de santé sécurisées
+            </div>
+        </div>
+
+        <!-- Colonnes de navigation -->
+        <div class="medinfo-footer-columns">
+            <div class="medinfo-footer-column">
+                <h3 class="medinfo-footer-title">Navigation</h3>
+                <ul class="medinfo-footer-list">
+                    <li><a href="index.php" class="medinfo-footer-link">Accueil</a></li>
+                    <li><a href="index.php?page=connexion" class="medinfo-footer-link">Se connecter</a></li>
+                    <li><a href="index.php?page=inscription" class="medinfo-footer-link">Créer un compte</a></li>
+                </ul>
+            </div>
+
+            <div class="medinfo-footer-column">
+                <h3 class="medinfo-footer-title">Patients</h3>
+                <ul class="medinfo-footer-list">
+                    <li><a href="index.php?page=priseRdv" class="medinfo-footer-link">Prendre rendez-vous</a></li>
+                    <li><a href="index.php?page=monEspace" class="medinfo-footer-link">Mon espace santé</a></li>
+                    <li><a href="index.php?page=faq" class="medinfo-footer-link">Questions fréquentes</a></li>
+                </ul>
+            </div>
+
+            <div class="medinfo-footer-column">
+                <h3 class="medinfo-footer-title">Centre médical</h3>
+                <ul class="medinfo-footer-list">
+                    <li><a href="index.php?page=aPropos" class="medinfo-footer-link">À propos</a></li>
+                    <li><a href="index.php?page=specialites" class="medinfo-footer-link">Spécialités</a></li>
+                    <li><a href="index.php?page=contact" class="medinfo-footer-link">Contact & accès</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ligne basse -->
+    <div class="medinfo-footer-bottom">
+        <div class="medinfo-footer-bottom-inner">
+            <div class="medinfo-footer-bottom-left">
+                <span>© <?php echo date('Y'); ?> MedInfo.</span>
+                <span>Tous droits réservés.</span>
+            </div>
+
+            <div class="medinfo-footer-bottom-right">
+                <a href="index.php?page=CGU" class="medinfo-footer-bottom-link">CGU</a>
+                <a href="index.php?page=politiquesConfidentialite" class="medinfo-footer-bottom-link">
+                    Politique de confidentialité
+                </a>
+                <a href="index.php?page=mentionsLegales" class="medinfo-footer-bottom-link">Mentions légales</a>
+
+                <!-- Social (optionnel, remplace les # par tes liens) -->
+                <div class="medinfo-footer-socials">
+                    <a href="#" class="medinfo-footer-social-link" aria-label="LinkedIn MedInfo">in</a>
+                    <a href="#" class="medinfo-footer-social-link" aria-label="Facebook MedInfo">f</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
 </body>
 </html>

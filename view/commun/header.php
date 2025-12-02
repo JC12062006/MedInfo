@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="public/styles.reinitialisationMdp.css">
     <link rel="stylesheet" href="public/styles.accueil.css">
     <link rel="stylesheet" href="public/styles.header.css">
+    <link rel="stylesheet" href="public/styles.footer.css">
 
 
     <title>MedInfo</title>
@@ -45,7 +46,7 @@
                                 <a href="index.php?page=medecins" class="medinfo-nav-link">Médecins</a>
                             <?php }else{ ?>
                                 <a href="index.php?page=prendreRdv" class="medinfo-nav-link">Mon agenda</a>
-                                <a href="index.php?page=medecins" class="medinfo-nav-link"></a>
+                                <a href="index.php?page=demandesRdv" class="medinfo-nav-link">Gestion Rendez-Vous</a>
                             <?php } ?>
                 <?php } ?>
             </nav>
