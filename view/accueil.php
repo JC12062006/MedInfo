@@ -6,8 +6,12 @@
     
     <button class="btn-primary">Prendre rendez-vous</button>
     
-    <!-- Pastille entreprise -->
-    <div class="backyard-badge">Le Backyard</div>
+<!-- Badge Le Backyard -->
+
+<div class="backyard-logo-container">
+    <img src="public/img/logoLeBackyard.jpg" alt="Logo Le Backyard" class="backyard-logo">
+    <span class="backyard-credit">Développé par Le Backyard</span>
+</div>
 </section>
 
 
