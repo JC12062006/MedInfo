@@ -125,41 +125,39 @@ CREATE TABLE documentation(
 
 
 -- jeux de données pour alimenter la BDD
-INSERT INTO specialite (id_specialite, libelle) VALUES
-(1,  'Médecine générale'),
-(2,  'Cardiologie'),
-(3,  'Dermatologie'),
-(4,  'Gynécologie'),
-(5,  'Pédiatrie'),
-(6,  'Oto-rhino-laryngologie (ORL)'),
-(7,  'Ophtalmologie'),
-(8,  'Rhumatologie'),
-(9,  'Endocrinologie'),
-(10, 'Gastro-entérologie'),
-(11, 'Pneumologie'),
-(12, 'Neurologie'),
-(13, 'Psychiatrie'),
-(14, 'Urologie'),
-(15, 'Néphrologie'),
-(16, 'Oncologie'),
-(17, 'Gériatrie'),
-(18, 'Allergologie'),
-(19, 'Radiologie'),
-(20, 'Médecine du sport');
+INSERT INTO specialite (libelle) VALUES
+('Cardiologie'),
+('Dermatologie'),
+('Gynécologie'),
+('Pédiatrie'),
+('Neurologie'),
+('Endocrinologie'),
+('Rhumatologie'),
+('Gastro-entérologie'),
+('Pneumologie'),
+('Oncologie'),
+('Urologie'),
+('Psychiatrie'),
+('ORL'),
+('Ophtalmologie'),
+('Chirurgie générale'),
+('Médecine générale'),
+('Médecine du sport'),
+('Allergologie'),
+('Hématologie'),
+('Médecine interne');
 
 
-INSERT INTO utilisateur 
-(id_utilisateur, nom, prenom, email, hash_password, telephone, role, date_naissance) VALUES
-(100, 'Dupont',  'Marie',   'marie.dupont@medinfo.fr',  'e937073df714290723d91595945f9359cedaf69e', '0600000001', 'medecin', '1980-03-12'),
-(101, 'Martin',  'Paul',    'paul.martin@medinfo.fr',   'a007fbfad9cd4a4c8eb330f95266c2655404830b', '0600000002', 'medecin', '1975-07-25'),
-(102, 'Leroy',   'Sophie',  'sophie.leroy@medinfo.fr',  '91b6657ccd7093b33caabeeda4bc7b12ccd387c8', '0600000003', 'medecin', '1983-11-05'),
-(103, 'Rossi',   'Alessio', 'alessio.rossi@medinfo.fr', 'a176fa6083c16c5ce397b0a2582fc8930011c6c7', '0600000004', 'medecin', '1978-02-18'),
-(104, 'Nguyen',  'Linh',    'linh.nguyen@medinfo.fr',   '39663005e9ffd5d604bde4c2f093b21b94e1c8a8', '0600000005', 'medecin', '1986-09-09');
+INSERT INTO utilisateur (nom, prenom, email, hash_password, telephone, role, date_naissance) VALUES 
+('Dupont', 'Camille', 'c.dupont@medinfo.fr', SHA1('Medinfo123'), '0601020304', 'Medecin', '1978-04-12'),
+('Martin', 'Sarah', 's.martin@medinfo.fr', SHA1('Dermato2024'), '0611223344', 'Medecin', '1985-06-22'),
+('Benali', 'Mohamed', 'm.benali@medinfo.fr', SHA1('Generaliste77'), '0677889900', 'Medecin', '1975-11-03'),
+('Romano', 'Elisa', 'e.romano@medinfo.fr', SHA1('Gyneco2025'), '0655443322', 'Medecin', '1984-02-14'),
+('Caron', 'Julien', 'j.caron@medinfo.fr', SHA1('Pediatrie01'), '0644221133', 'Medecin', '1983-09-17');
 
-INSERT INTO medecin 
-(id_medecin, id_utilisateur, id_specialite, numero_rpps, salle_cabinet) VALUES
-(1, 100, 1, '10000000001', 'Cabinet 101'),
-(2, 101, 2, '10000000002', 'Cabinet 202'),
-(3, 102, 3, '10000000003', 'Cabinet 303'),
-(4, 103, 4, '10000000004', 'Cabinet 404'),
-(5, 104, 5, '10000000005', 'Cabinet 505');
+INSERT INTO medecin (rpps, formations, langues_parlees, experiences, description, fk_id_utilisateur, fk_id_specialite) VALUES 
+('12345678901', 'DES Cardiologie', 'Français, Anglais', '15 ans en CHU', 'Spécialiste du cœur, diagnostic rapide et prise en charge complète.', 1, 1),
+('23456789012', 'DES Dermatologie', 'Français, Anglais, Espagnol', '10 ans cabinet privé', 'Experte en maladies de peau, traitements laser et esthétique médicale.', 2, 2),
+('34567890123', 'Doctorat Médecine Générale', 'Français, Arabe', '20 ans de pratique', 'Médecin généraliste expérimenté, suivi complet et prévention.', 3, 16),
+('45678901234', 'DES Gynécologie Obstétrique', 'Français, Italien', '12 ans maternité niveau 3',    'Spécialiste du suivi de grossesse, fertilité et santé féminine.', 4, 3),
+('56789012345', 'DES Pédiatrie', 'Français, Anglais', '9 ans en pédiatrie hospitalière', 'Pédiatre attentionné, suivi de l’enfant et de l’adolescent.', 5, 4);
