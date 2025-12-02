@@ -1,0 +1,75 @@
+:root {
+    --medinfo-primary: #4D61F4;    /* bleu médical principal */
+    --medinfo-primary-soft: #EEF1FF;
+    --medinfo-secondary: #D7FF7B;  /* vert accent */
+    --medinfo-bg: #FFFFFF;
+    --medinfo-bg-alt: #F6F8FC;
+    --medinfo-text-main: #1F2933;
+    --medinfo-text-muted: #6B7280;
+    --medinfo-border-soft: #E2E8F0;
+    --medinfo-danger: #E53E3E;
+
+    --medinfo-radius-lg: 18px;
+    --medinfo-radius-xl: 26px;
+    --medinfo-shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.12);
+    --medinfo-transition-fast: 0.18s ease-out;
+}
+
+/* ===========================
+   MedInfo - Page Accueil
+   =========================== */
+
+.main-section {
+    text-align: center;
+    padding: 4rem 2rem;
+    background-color: var(--medinfo-bg);
+}
+
+.main-section h2 {
+    font-family: 'Barlow', sans-serif;
+    font-size: 2.2rem;
+    color: var(--medinfo-primary);
+    margin-bottom: 1rem;
+}
+
+.main-section p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    color: var(--medinfo-text-muted);
+    max-width: 650px;
+    margin: 0 auto 2rem auto;
+    line-height: 1.6;
+}
+
+/* Bouton principal */
+.btn-primary {
+    background-color: var(--medinfo-primary);
+    color: var(--medinfo-bg);
+    border: none;
+    padding: 0.9rem 1.8rem;
+    border-radius: var(--medinfo-radius-lg);
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+    transition: background var(--medinfo-transition-fast), transform var(--medinfo-transition-fast);
+    box-shadow: var(--medinfo-shadow-soft);
+}
+
+.btn-primary:hover {
+    background-color: #3b4ed1; /* nuance plus foncée */
+    transform: translateY(-2px);
+}
+
+/* Pastille "Le Backyard" */
+.backyard-badge {
+    display: inline-block;
+    background-color: var(--medinfo-secondary);
+    color: var(--medinfo-text-main);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 0.5rem 1rem;
+    border-radius: var(--medinfo-radius-xl);
+    margin-top: 1.5rem;
+    box-shadow: var(--medinfo-shadow-soft);
+}
