@@ -36,8 +36,8 @@ switch($page){
     case 'accueil' :
         require_once("view/accueil.php");
         break;
-    case '' :
-        require_once("");
+    case 'prendreRdv' :
+        require_once("view/patient/prendreRdv.php");
         break;
     case '' :
         require_once("");
@@ -69,6 +69,10 @@ switch($page){
 
     default:
         include ('view/accueil.php');
+        break;
+    case 'deconnexion':
+        session_destroy();
+        header('Location:https://127.0.0.1/stokage/index.php?page=accueil');
         break;
 }
 
