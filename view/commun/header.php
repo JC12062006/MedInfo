@@ -39,9 +39,14 @@
             <nav class="medinfo-nav" aria-label="Navigation principale">
 
                 <a href="index.php?page=accueil" class="medinfo-nav-link medinfo-nav-link--active">Accueil</a>
-                <?php if(!empty($_SESSION['user'])){?>
-                    <a href="index.php?page=prendreRdv" class="medinfo-nav-link">Prendre rendez-vous</a>
-                    <a href="index.php?page=medecins" class="medinfo-nav-link">Médecins</a>
+                <?php if(!empty($_SESSION['user'])){
+                            if($_SESSION['user']['role'] == 'Patient'){?>
+                                <a href="index.php?page=prendreRdv" class="medinfo-nav-link">Prendre rendez-vous</a>
+                                <a href="index.php?page=medecins" class="medinfo-nav-link">Médecins</a>
+                            <?php }else{ ?>
+                                <a href="index.php?page=prendreRdv" class="medinfo-nav-link">Mon agenda</a>
+                                <a href="index.php?page=medecins" class="medinfo-nav-link"></a>
+                            <?php } ?>
                 <?php } ?>
             </nav>
             <?php if(empty($_SESSION['user'])){?>
