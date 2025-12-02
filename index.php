@@ -39,8 +39,8 @@ switch($page){
     case 'prendreRdv' :
         require_once("view/patient/prendreRdv.php");
         break;
-    case '' :
-        require_once("");
+    case 'profilPatient' :
+        require_once("view/patient/profilPatient.php");
         break;
     case '' :
         require_once("");
