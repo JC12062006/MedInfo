@@ -48,7 +48,7 @@
                                 <a href="index.php?page=profilMedecin" class="medinfo-nav-link">Mon agenda</a>
                                 <a href="index.php?page=demandesRdv" class="medinfo-nav-link">Gestion Rendez-Vous</a>
                                 <a href="index.php?page=consultationMedecin" class="medinfo-nav-link">Historique Consultations</a>
-                                <a href="index.php?page=consultationMedecin" class="medinfo-nav-link">Demarrer une Consultations</a>
+                                <a href="index.php?page=ajouterConsultation" class="medinfo-nav-link">Demarrer une Consultations</a>
                             <?php } ?>
                 <?php } ?>
             </nav>

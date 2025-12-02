@@ -28,11 +28,23 @@
             </div>
 
             <div class="medinfo-footer-column">
-                <h3 class="medinfo-footer-title">Patients</h3>
-                <ul class="medinfo-footer-list">
-                    <li><a href="index.php?page=prendreRdv" class="medinfo-footer-link">Prendre rendez-vous</a></li>
-                    <li><a href="index.php?page=monEspace" class="medinfo-footer-link">Mon espace santé</a></li>
-                </ul>
+                <?php if(!empty($_SESSION['user'])){
+                        if($_SESSION['user']['role'] == 'Patient'){?>
+                            <h3 class="medinfo-footer-title">Patient</h3>
+                            <ul class="medinfo-footer-list">
+                                <li><a href="index.php?page=prendreRdv" class="medinfo-footer-link">Prendre rendez-vous</a></li>
+                                <li><a href="index.php?page=monEspace" class="medinfo-footer-link">Mon espace santé</a></li>
+                            </ul>
+                    <?php }else{?>
+                            <h3 class="medinfo-footer-title">Médecin</h3>
+                            <ul class="medinfo-footer-list">
+                                <li><a href="index.php?page=profilMedecin" class="medinfo-footer-link">Mon agenda</a></li>
+                                <li><a href="index.php?page=demandesRdv" class="medinfo-footer-link">Gestion Rendez-Vous</a></li>
+                                <li><a href="index.php?page=consultationMedecin" class="medinfo-footer-link">Historique Consultations</a></li>
+                                <li><a href="index.php?page=ajouterConsultation" class="medinfo-footer-link">Demarrer une Consultations</a></li>
+                            </ul>
+                    <?php }
+                }?>
             </div>
         </div>
     </div>
