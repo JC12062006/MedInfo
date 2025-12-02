@@ -33,8 +33,8 @@ switch($page){
     case 'reinitMdp' :
         require_once("view/utilisateur/reinitialisationMdp.php");
         break;
-    case '' :
-        require_once("");
+    case 'accueil' :
+        require_once("view/accueil.php");
         break;
     case '' :
         require_once("");
@@ -65,6 +65,10 @@ switch($page){
         break;
     case '' :
         require_once("");
+        break;
+
+    default:
+        include ('view/accueil.php');
         break;
 }
 
