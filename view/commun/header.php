@@ -12,9 +12,49 @@
     <link rel="stylesheet" href="public/styles.inscription.css">
     <link rel="stylesheet" href="public/styles.mdpOublie.css">
     <link rel="stylesheet" href="public/styles.reinitialisationMdp.css">
+    <link rel="stylesheet" href="public/styles.accueil.css">
+    <link rel="stylesheet" href="public/styles.header.css">
 
 
     <title>MedInfo</title>
 </head>
 <body>
-    
+<header class="medinfo-header">
+    <div class="medinfo-header-inner">
+        <!-- Logo MedInfo (on réutilise le style existant) -->
+        <a href="index.php" class="medinfo-logo">
+            <span class="medinfo-logo-icon">M</span>
+            <span class="medinfo-logo-text">MedInfo</span>
+        </a>
+
+        <!-- Toggle mobile -->
+        <input type="checkbox" id="medinfo-nav-toggle" class="medinfo-nav-toggle">
+        <label for="medinfo-nav-toggle" class="medinfo-nav-burger" aria-label="Ouvrir la navigation">
+            <span class="medinfo-nav-burger-lines"></span>
+        </label>
+
+        <!-- Nav + actions -->
+        <div class="medinfo-header-right">
+            <nav class="medinfo-nav" aria-label="Navigation principale">
+                <a href="index.php?page=accueil" class="medinfo-nav-link medinfo-nav-link--active">Accueil</a>
+                <a href="index.php?page=priseRendezVous" class="medinfo-nav-link">Prendre rendez-vous</a>
+                <a href="index.php?page=medecins" class="medinfo-nav-link">Médecins</a>
+                <a href="index.php?page=aide" class="medinfo-nav-link">Aide</a>
+
+            </nav>
+
+            <div class="medinfo-header-actions">
+                <a href="index.php?page=connexion">
+                    <button type="button" class="medinfo-btn-ghost">
+                        Connexion
+                    </button>
+                </a>
+                <a href="index.php?page=inscription">
+                    <button type="button" class="medinfo-btn-primary-nav">
+                        S’inscrire
+                    </button>
+                </a>
+            </div>
+        </div>
+    </div>
+</header>

@@ -20,14 +20,14 @@ function sendResetEmail($toEmail, $resetLink)
         $mail->SMTPAuth   = true;
 
         // Pour tester, mets ici ton adresse Gmail + un mot de passe d’application (à générer sur ton compte gmail)
-        $mail->Username   = 'tonemail@gmail.com'; //adresse mail à configurer avec le version finale pour la soutenance
+        $mail->Username   = 'monadressemail@gmail.com'; //adresse mail à configurer avec le version finale pour la soutenance
         $mail->Password   = 'XXXX XXXX XXXX XXXX'; //ceci sera le mdp à configurer sur le compte de l'application
 
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port       = 587;
 
         // Expéditeur / destinataire
-        $mail->setFrom('ton.adresse@gmail.com', 'MedInfo');
+        $mail->setFrom('monadressemail@gmail.com', 'MedInfo');
         $mail->addAddress($toEmail);
 
         // Contenu
