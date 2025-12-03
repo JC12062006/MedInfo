@@ -161,3 +161,10 @@ INSERT INTO medecin (rpps, formations, langues_parlees, experiences, description
 ('34567890123', 'Doctorat Médecine Générale', 'Français, Arabe', '20 ans de pratique', 'Médecin généraliste expérimenté, suivi complet et prévention.', 3, 16),
 ('45678901234', 'DES Gynécologie Obstétrique', 'Français, Italien', '12 ans maternité niveau 3',    'Spécialiste du suivi de grossesse, fertilité et santé féminine.', 4, 3),
 ('56789012345', 'DES Pédiatrie', 'Français, Anglais', '9 ans en pédiatrie hospitalière', 'Pédiatre attentionné, suivi de l’enfant et de l’adolescent.', 5, 4);
+
+
+-- Création de trois salles de consultation
+INSERT INTO salle (libelle, etage) VALUES
+('Cabinet A', 'Rez-de-chaussée'),
+('Salle 301', '3ème étage'),
+('Bureau B', '1er étage');
