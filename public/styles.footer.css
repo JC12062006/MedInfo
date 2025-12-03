@@ -20,6 +20,7 @@
 }
 
 .medinfo-footer {
+    width : 100%;
     margin-top: 48px;
     background: var(--medinfo-bg-alt);
     border-top: 1px solid var(--medinfo-border-soft);
@@ -28,9 +29,9 @@
 }
 
 .medinfo-footer-inner {
-    max-width: 1120px;
+    max-width: 100%;
     margin: 0 auto;
-    padding: 28px 20px 20px;
+    padding: 28px 0px 20px;
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
@@ -41,6 +42,7 @@
 
 .medinfo-footer-brand {
     max-width: 320px;
+    margin-left: 20px;
 }
 
 .medinfo-footer-brand .medinfo-logo {
@@ -272,3 +274,43 @@
     color: var(--medinfo-text-muted);
 }
 
+/* ===========================
+   GLOBAL LAYOUT FIX & RESET
+   =========================== */
+
+/* 1. Cette règle empêche le footer de dépasser la largeur de l'écran à cause du padding */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    /* Assure que la page fait au moins la hauteur de l'écran */
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    
+    /* Active Flexbox vertical pour pousser le footer */
+    display: flex;
+    flex-direction: column;
+    
+    /* Couleur de fond par défaut (reprise de tes variables) */
+    background-color: #FFFFFF; 
+    font-family: "Montserrat", sans-serif;
+}
+
+/* 2. C'est l'astuce la plus propre : Le contenu principal DOIT grandir */
+main {
+    flex: 1; /* Cela force la zone centrale à prendre tout l'espace vide disponible */
+    width: 100%; /* Sécurité pour la largeur */
+}
+
+/* Adaptation de ton footer existant */
+.medinfo-footer {
+    width: 100%;
+    margin-top: auto; /* Double sécurité pour le coller en bas */
+    /* Garde le reste de tes styles (background, border, etc.) */
+}
