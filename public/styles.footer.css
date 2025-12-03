@@ -249,3 +249,26 @@
         min-width: 130px;
     }
 }
+
+/* Backyard Logo */
+.backyard-footer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: 20px;
+}
+
+.backyard-footer-logo {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: var(--medinfo-shadow-soft);
+}
+
+.backyard-footer-credit {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    color: var(--medinfo-text-muted);
+}
+

@@ -71,6 +71,13 @@
                     <a href="#" class="medinfo-footer-social-link" aria-label="Facebook MedInfo">f</a>
                 </div>
                 -->
+
+                <!-- Bloc Le Backyard -->
+                <div class="backyard-footer">
+                    <img src="public/img/logoLeBackyard.jpg" alt="Logo Le Backyard" class="backyard-footer-logo">
+                    <span class="backyard-footer-credit">Développé par Le Backyard</span>
+                </div>
+                
             </div>
         </div>
     </div>
@@ -78,3 +85,5 @@
 
 </body>
 </html>
+
+
