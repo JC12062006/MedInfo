@@ -42,10 +42,12 @@ if (empty($_SESSION['user'])) {
         <p>Centre Médical Ramsay Saint‑Lazare<br>
         13 Rue de la Pépinière, 75008 Paris</p>
         <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.462314028329!2d2.324236315674!3d48.87535677928995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e3a3b5f4b6b%3A0x2b6f6f6f6f6f6f6f!2sCentre%20M%C3%A9dical%20Ramsay%20Sant%C3%A9%20Saint-Lazare!5e0!3m2!1sfr!2sfr!4v1733250000"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.462314028329!2d2.324236315674!3d48.87535677928995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e3a3b5f4b6b%3A0xabcdef123456789!2sCentre%20M%C3%A9dical%20Ramsay%20Sant%C3%A9%20Saint-Lazare!5e0!3m2!1sfr!2sfr!4v1733250000"
             width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy">
         </iframe>
     </section>
+
+
 
 
     <?php
