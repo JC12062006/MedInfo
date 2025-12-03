@@ -15,9 +15,9 @@ CREATE TABLE utilisateur(
     date_creation           TIMESTAMP          NOT NULL DEFAULT CURRENT_TIMESTAMP,
     telephone               VARCHAR(20)        NOT NULL UNIQUE,
     role                    ENUM('Admin','Patient','Medecin','Secretaire') NOT NULL,
-    date_naissance          DATE               NOT NULL
+    date_naissance          DATE               NOT NULL,
     reset_token             VARCHAR(64)        NULL,
-    reset_token_expiration  DATETIME           NULL;
+    reset_token_expiration  DATETIME           NULL
 
 );
 
