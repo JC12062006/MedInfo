@@ -10,6 +10,10 @@
                 Prenez rendez-vous simplement dans votre centre médical pluridisciplinaire,
                 en toute sécurité et en quelques clics.
             </p>
+            <div class="medinfo-footer-badge">
+                <span class="medinfo-footer-badge-dot"></span>
+                Centre médical certifié &nbsp;•&nbsp; Données de santé sécurisées
+            </div>
         </div>
 
         <!-- Colonnes de navigation -->
@@ -79,7 +83,6 @@
     </div>
 </footer>
 
-</main>
 </body>
 </html>
 
