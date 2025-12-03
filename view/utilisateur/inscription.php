@@ -30,7 +30,7 @@
         <section class="medinfo-register-card" aria-label="Formulaire d'inscription">
             <h2 class="medinfo-card-title">Inscription</h2>
             <p class="medinfo-card-help-text">
-                Déjà inscrit ? <a href="login.php" class="medinfo-link">Connectez-vous</a>
+                Déjà inscrit ? <a href="index.php?page=connexion" class="medinfo-link">Connectez-vous</a>
             </p>
 
             <!-- Tu pourras adapter l'action vers ton contrôleur PHP -->
