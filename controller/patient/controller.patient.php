@@ -25,7 +25,7 @@ if(isset($_POST['action'])){
             $patientController->update();
             break;
         case 'connexion':
-            $patientController->checkLogin();
+            $patientController->Login();
             break;
         case 'mdpOubliee':
             $patientController->motDePasseOublie();
@@ -58,13 +58,13 @@ class patientController{
         header('Location:https://127.0.0.1/promo300/medinfo/index.php?page=accueil');
     }
 
-    public function checkLogin(){
+    public function Login(){
 
-        $user = $this->patient->checkLogin($_POST['email'], $_POST['mdp']);
+        $user = $this->patient->getPatientOncheckLogin($_POST['email'], $_POST['mdp']);
         
         if ($user) {
             session_start();
-            $_SESSION['user'] = $user[0];
+            $_SESSION['user'] = $user;
             header('Location:https://127.0.0.1/promo300/medinfo/index.php?page=accueil');
             exit;
         } else {

@@ -27,7 +27,9 @@
 
             <form action="index.php?page=consultationController" method="POST" class="medinfo-form-grid">
                 
+                <!--récupération de id medecin et patient -->
                 <input type="hidden" name="id_patient" value="<?php echo $_GET['id_patient']; ?>">
+                <input type="hidden" name="id_medecin" value="<?php echo $_SESSION['user']['id_medecin']; ?>">
 
                 <div class="medinfo-form-row">
                     <div class="medinfo-form-group">

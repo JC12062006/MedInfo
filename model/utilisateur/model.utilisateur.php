@@ -30,7 +30,7 @@ class Utilisateur{
         $req->bindParam(':email', $email);
         $req->bindParam(':mdp', $hashmdp);  
         $req->execute();
-        return $req->fetchAll();
+        return $req->fetch(PDO::FETCH_ASSOC);
     }
 
 

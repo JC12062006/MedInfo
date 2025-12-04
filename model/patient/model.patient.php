@@ -56,6 +56,35 @@ class Patient extends Utilisateur
         return $req->fetchAll();
     }
 
+    public function GetPatientOncheckLogin($email, $mdp){
+       
+        $user = $this->checkLogin($email, $mdp);
+        if(!$user){
+            return false;
+        }
+        //var_dump($user);
+        //die();
+        $req = $this->bdd->prepare("
+                SELECT 
+                p.id_patient, p.adresse, p.num_secu, p.sexe
+            FROM 
+                patient p
+            WHERE 
+                p.fk_id_utilisateur = :id_utilisateur
+            ");
+
+        $req->bindparam(':id_utilisateur', $user["id_utilisateur"]);
+        $req->execute();
+        $patient_data = $req->fetch(PDO::FETCH_ASSOC);
+
+        if ($patient_data) {
+            return array_merge($user, $patient_data);
+        }
+
+        // Retourne l'utilisateur seul si la ligne n'existe pas (ce qui ne devrait pas arriver selon vous)
+        return $user;
+    }
+
 
     // mettre à jour un patient
     public function updatePatient($nom, $prenom, $email, $tel, $date_naissance, $adresse, $num_secu, $sexe, $id_patient, $id_utilisateur)
