@@ -94,7 +94,7 @@ if (empty($_SESSION['user'])) {
     <section class="dashboard medecin-dashboard">
         <h3>Mes outils</h3>
         <div class="actions-grid">
-            <a href="index.php?page=profilMedecin" class="action-card">
+            <a href="index.php?page=agenda" class="action-card">
                 <span class="icon">📅</span>
                 <span class="text">Mon agenda</span>
             </a>

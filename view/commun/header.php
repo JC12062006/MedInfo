@@ -40,7 +40,7 @@
         <div class="medinfo-header-right">
             <nav class="medinfo-nav" aria-label="Navigation principale">
 
-                <a href="index.php?page=accueil" class="medinfo-nav-link medinfo-nav-link--active">Accueil</a>
+                <a href="index.php?page=accueil" class="medinfo-nav-link medinfo-nav-link">Accueil</a>
                 <?php if(!empty($_SESSION['user'])){
                             if($_SESSION['user']['role'] == 'Patient'){?>
                                 <a href="index.php?page=prendreRdv" class="medinfo-nav-link">Prendre rendez-vous</a>
