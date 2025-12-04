@@ -70,6 +70,7 @@ Class Rendez_vous{
             rdv.date_creation,
             rdv.motif,
             rdv.statut AS rdv_statut,
+            rdv.fk_id_patient AS id_patient,
             TIME_FORMAT(c.date_heure_debut, '%H:%i') AS heure_debut_formatee,
             c.date_heure_fin,
             s.libelle AS salle_libelle,

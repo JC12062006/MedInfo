@@ -61,7 +61,7 @@ class patientController{
     public function checkLogin(){
 
         $user = $this->patient->checkLogin($_POST['email'], $_POST['mdp']);
-       
+        
         if ($user) {
             session_start();
             $_SESSION['user'] = $user[0];

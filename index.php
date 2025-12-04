@@ -48,8 +48,8 @@ switch($page){
     case 'ajouterConsultation' :
         require_once("view/medecin/ajouterConsultation.php");
         break;
-    case '' :
-        require_once("");
+    case 'consultationController' :
+        require_once("controller/consultation/consultationController.php");
         break;
     case '' :
         require_once("");

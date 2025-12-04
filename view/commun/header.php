@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="public/styles.header.css">
     <link rel="stylesheet" href="public/styles.footer.css">
     <link rel="stylesheet" href="public/styles.agenda.css">
+    <link rel="stylesheet" href="public/styles.ajoutConsultation.css">
 
 
     <title>MedInfo</title>

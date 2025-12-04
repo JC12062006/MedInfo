@@ -1,5 +1,7 @@
 <?php
 require_once ROOT . 'controller/rendez_vous/readRdvMedecins.php';
+//var_dump($rdvMedecins);
+//die();
 ?>
 
 <div class="medinfo-agenda-section">
@@ -44,7 +46,7 @@ require_once ROOT . 'controller/rendez_vous/readRdvMedecins.php';
                     </div>
 
                     <div class="rdv-card-actions">
-                        <button class="medinfo-btn-ghost rdv-action-detail"><a href="index.php?page=ajouterConsultation">Démarrer</a></button>
+                        <button class="medinfo-btn-ghost rdv-action-detail"><a href="index.php?page=ajouterConsultation&id_patient=<?php echo $rdv['id_patient']?>">Démarrer</a></button>
                         <?php if ($rdv['rdv_statut'] === 'a_confirmer'): ?>
                             <button class="medinfo-btn-primary-nav rdv-action-confirm">Confirmer</button>
                         <?php endif; ?>
