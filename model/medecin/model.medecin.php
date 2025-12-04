@@ -3,9 +3,12 @@ include ('../utilisateur/model.utilisateur.php');
 
 class Medecin extends Utilisateur {
 
+          private $bdd;
+
     function __construct($bdd)
     {
         parent::__construct($bdd); // on appelle le constructeur de Utilisateur
+        $this->bdd=$bdd;
     }
 
     // -------------------------
@@ -91,17 +94,36 @@ class Medecin extends Utilisateur {
     // -------------------------
 
     // Créer une consultation
-    public function createConsultation($compte_rendu, $tension, $poids, $observations, $fk_id_medecin, $fk_id_patient){
-        $req = $this->bdd->prepare("INSERT INTO consultations(compte_rendu, tension, poids, observations, fk_id_medecin, fk_id_patient) 
-                                    VALUES (:compte_rendu, :tension, :poids, :observations, :fk_id_medecin, :fk_id_patient)");
-        $req->bindParam(':compte_rendu', $compte_rendu);
-        $req->bindParam(':tension', $tension);
-        $req->bindParam(':poids', $poids);
-        $req->bindParam(':observations', $observations);
-        $req->bindParam(':fk_id_medecin', $fk_id_medecin);
-        $req->bindParam(':fk_id_patient', $fk_id_patient);
-        return $req->execute();
+    public function GetMedecinOncheckLogin($email, $mdp){
+       
+        $user = $this->checkLogin($email, $mdp);
+        if(!$user){
+            return false;
+        }
+        //var_dump($user);
+        //die();
+        $req = $this->bdd->prepare("
+                SELECT 
+                m.id_medecin, m.rpps, m.est_conventionne, m.formations, m.langues_parlees, m.experiences, m.description
+                
+            FROM 
+                medecin m
+            WHERE 
+                m.fk_id_utilisateur = :id_utilisateur
+            ");
+
+        $req->bindparam(':id_utilisateur', $user["id_utilisateur"]);
+        $req->execute();
+        $medecin_data = $req->fetch(PDO::FETCH_ASSOC);
+
+        if ($medecin_data) {
+            return array_merge($user, $medecin_data);
+        }
+
+        // Retourne l'utilisateur seul si la ligne n'existe pas (ce qui ne devrait pas arriver selon vous)
+        return $user;
     }
+
 
     // Lire les consultations d’un médecin
     public function readConsultationsByMedecin($id_medecin){

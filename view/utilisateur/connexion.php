@@ -33,13 +33,7 @@
                 <!-- Email -->
                 <div class="medinfo-form-group">
                     <label for="email">Adresse e-mail</label>
-                    <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        placeholder="nom.prenom@email.com"
-                        required
-                    >
+                    <input type="email" id="email" name="email" placeholder="nom.prenom@email.com" required>
                 </div>
 
                 <!-- Mot de passe avec icône oeil -->

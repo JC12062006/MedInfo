@@ -1,4 +1,6 @@
 <?php
+var_dump($_SESSION['user']);
+die();
 // Vérifie si l'utilisateur est connecté
 if (empty($_SESSION['user'])) {
     // ===========================
