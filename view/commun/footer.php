@@ -10,10 +10,6 @@
                 Prenez rendez-vous simplement dans votre centre médical pluridisciplinaire,
                 en toute sécurité et en quelques clics.
             </p>
-            <div class="medinfo-footer-badge">
-                <span class="medinfo-footer-badge-dot"></span>
-                Centre médical certifié &nbsp;•&nbsp; Données de santé sécurisées
-            </div>
         </div>
 
         <!-- Colonnes de navigation -->
@@ -38,7 +34,7 @@
                     <?php }else{?>
                             <h3 class="medinfo-footer-title">Médecin</h3>
                             <ul class="medinfo-footer-list">
-                                <li><a href="index.php?page=profilMedecin" class="medinfo-footer-link">Mon agenda</a></li>
+                                <li><a href="index.php?page=agenda" class="medinfo-footer-link">Mon agenda</a></li>
                                 <li><a href="index.php?page=demandesRdv" class="medinfo-footer-link">Gestion Rendez-Vous</a></li>
                                 <li><a href="index.php?page=consultationMedecin" class="medinfo-footer-link">Historique Consultations</a></li>
                                 <li><a href="index.php?page=ajouterConsultation" class="medinfo-footer-link">Demarrer une Consultations</a></li>

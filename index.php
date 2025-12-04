@@ -42,11 +42,11 @@ switch($page){
     case 'profilPatient' :
         require_once("view/patient/profilPatient.php");
         break;
-    case '' :
-        require_once("");
+    case 'agenda' :
+        require_once("view/medecin/agendaMedecin.php");
         break;
-    case '' :
-        require_once("");
+    case 'ajouterConsultation' :
+        require_once("view/medecin/ajouterConsultation.php");
         break;
     case '' :
         require_once("");

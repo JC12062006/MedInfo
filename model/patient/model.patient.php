@@ -41,7 +41,7 @@ class Patient extends Utilisateur
     }
 
     
-    //   Lire tous les patients (simple SELECT *)
+    //   Lire tous les patients 
      
     public function getAllPatients(){
        

@@ -58,21 +58,6 @@ CREATE TABLE patient(
 
 );
 
--- Table rdv
-CREATE TABLE rendez_vous(
-   
-    id_rdv        INT  AUTO_INCREMENT PRIMARY KEY,
-    date_creation DATE NOT NULL,
-    motif         VARCHAR(255) NOT NULL,
-    statut        ENUM('a_confirmer','confirmé','annulé','honoré','absent') NOT NULL,
-    origine       VARCHAR(155) NOT NULL,
-    fk_id_patient INT NOT NULL,
-    fk_id_medecin INT NOT NULL,
-    FOREIGN KEY (fk_id_patient) REFERENCES patient(id_patient),
-    FOREIGN KEY (fk_id_medecin) REFERENCES medecin(id_medecin)
-
-);
-
 -- Table salle
 CREATE TABLE salle(
 
@@ -94,6 +79,21 @@ CREATE TABLE creneau(
     FOREIGN KEY (fk_id_medecin) REFERENCES medecin(id_medecin),
     fk_id_salle      INT NOT NULL,
     FOREIGN KEY (fk_id_salle) REFERENCES salle(id_salle)
+
+);
+
+-- Table rdv
+CREATE TABLE rendez_vous(
+   
+    id_rdv        INT  AUTO_INCREMENT PRIMARY KEY,
+    date_creation TIMESTAMP           NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    motif         VARCHAR(255) NOT NULL,
+    statut        ENUM('a_confirmer','confirmé','annulé','honoré') NOT NULL DEFAULT 'a_confirmer',
+    origine       VARCHAR(155) NOT NULL,
+    fk_id_patient INT NOT NULL,
+    fk_id_creneau INT NOT NULL,
+    FOREIGN KEY (fk_id_patient) REFERENCES patient(id_patient),
+    FOREIGN KEY (fk_id_creneau) REFERENCES creneau(id_creneau)
 
 );
 
@@ -153,7 +153,8 @@ INSERT INTO utilisateur (nom, prenom, email, hash_password, telephone, role, dat
 ('Martin', 'Sarah', 's.martin@medinfo.fr', SHA1('Dermato2024'), '0611223344', 'Medecin', '1985-06-22'),
 ('Benali', 'Mohamed', 'm.benali@medinfo.fr', SHA1('Generaliste77'), '0677889900', 'Medecin', '1975-11-03'),
 ('Romano', 'Elisa', 'e.romano@medinfo.fr', SHA1('Gyneco2025'), '0655443322', 'Medecin', '1984-02-14'),
-('Caron', 'Julien', 'j.caron@medinfo.fr', SHA1('Pediatrie01'), '0644221133', 'Medecin', '1983-09-17');
+('Caron', 'Julien', 'j.caron@medinfo.fr', SHA1('Pediatrie01'), '0644221133', 'Medecin', '1983-09-17'),
+('Bonino', 'Leonardo', 'boninoleonardo@gmail.com', SHA1('#8367'), '0749034251', 'Patient', '2000-03-24');
 
 INSERT INTO medecin (rpps, formations, langues_parlees, experiences, description, fk_id_utilisateur, fk_id_specialite) VALUES 
 ('12345678901', 'DES Cardiologie', 'Français, Anglais', '15 ans en CHU', 'Spécialiste du cœur, diagnostic rapide et prise en charge complète.', 1, 1),
@@ -162,9 +163,32 @@ INSERT INTO medecin (rpps, formations, langues_parlees, experiences, description
 ('45678901234', 'DES Gynécologie Obstétrique', 'Français, Italien', '12 ans maternité niveau 3',    'Spécialiste du suivi de grossesse, fertilité et santé féminine.', 4, 3),
 ('56789012345', 'DES Pédiatrie', 'Français, Anglais', '9 ans en pédiatrie hospitalière', 'Pédiatre attentionné, suivi de l’enfant et de l’adolescent.', 5, 4);
 
+INSERT INTO patient(adresse, num_secu, sexe, fk_id_utilisateur) VALUES
+('94 Rue de Reuilly 75012 Paris', '238293828382828', 'homme', 6);
+
 
 -- Création de trois salles de consultation
 INSERT INTO salle (libelle, etage) VALUES
 ('Cabinet A', 'Rez-de-chaussée'),
 ('Salle 301', '3ème étage'),
 ('Bureau B', '1er étage');
+
+INSERT INTO creneau (date_heure_debut, date_heure_fin, statut, disponibilite, fk_id_medecin, fk_id_salle) VALUES 
+('2025-12-10 09:00:00', '2025-12-10 09:30:00', 'libre', 1, 1, 1),
+('2025-12-10 09:30:00', '2025-12-10 10:00:00', 'libre', 1, 1, 1),
+('2025-12-10 10:00:00', '2025-12-10 10:30:00', 'libre', 1, 1, 1),
+('2025-12-10 10:30:00', '2025-12-10 11:00:00', 'bloque', 0, 1, 1); -- Créneau bloqué (pause, réunion, etc.)
+
+-- Disponibilités pour le Médecin 3 (ID 3) dans la Salle 2 (ID 2)
+INSERT INTO creneau (date_heure_debut, date_heure_fin, statut, disponibilite, fk_id_medecin, fk_id_salle) VALUES 
+('2025-12-11 14:00:00', '2025-12-11 14:30:00', 'libre', 1, 3, 2),
+('2025-12-11 14:30:00', '2025-12-11 15:00:00', 'libre', 1, 3, 2),
+('2025-12-11 15:00:00', '2025-12-11 15:30:00', 'occupe', 0, 3, 2); -- Créneau occupé (sera un RDV pris par la suite)
+
+-- Rendez-vous 1 (Patient 1, utilise Créneau ID 1)
+INSERT INTO rendez_vous (date_creation, motif, statut, origine, fk_id_patient, fk_id_creneau) VALUES
+(CURRENT_DATE(), 'Consultation de suivi cardiologie', 'confirmé', 'Plateforme en ligne', 1, 1);
+
+-- Rendez-vous 2 (Patient 2, utilise Créneau ID 6)
+INSERT INTO rendez_vous (date_creation, motif, origine, fk_id_patient, fk_id_creneau) VALUES
+(CURRENT_DATE(), 'Bilan de santé général', 'Téléphone', 1, 6);
