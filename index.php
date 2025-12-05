@@ -51,11 +51,11 @@ switch($page){
     case 'consultationController' :
         require_once("controller/consultation/consultationController.php");
         break;
-    case '' :
-        require_once("");
+    case 'utilisateurController' :
+        require_once("controller/utilisateur/controller.utilisateur.php");
         break;
-    case '' :
-        require_once("");
+    case 'consultationMedecin' :
+        require_once("view/medecin/consultationMedecin.php");
         break;
     case '' :
         require_once("");

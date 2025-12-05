@@ -1,5 +1,5 @@
 <?php
-include ('../utilisateur/model.utilisateur.php');
+require_once ROOT . 'model/utilisateur/model.utilisateur.php';
 
 class Medecin extends Utilisateur {
 
@@ -94,14 +94,8 @@ class Medecin extends Utilisateur {
     // -------------------------
 
     // Créer une consultation
-    public function GetMedecinOncheckLogin($email, $mdp){
+    public function GetMedecinOncheckLogin($user){
        
-        $user = $this->checkLogin($email, $mdp);
-        if(!$user){
-            return false;
-        }
-        //var_dump($user);
-        //die();
         $req = $this->bdd->prepare("
                 SELECT 
                 m.id_medecin, m.rpps, m.est_conventionne, m.formations, m.langues_parlees, m.experiences, m.description
@@ -114,14 +108,8 @@ class Medecin extends Utilisateur {
 
         $req->bindparam(':id_utilisateur', $user["id_utilisateur"]);
         $req->execute();
-        $medecin_data = $req->fetch(PDO::FETCH_ASSOC);
+        return $req->fetch(PDO::FETCH_ASSOC);
 
-        if ($medecin_data) {
-            return array_merge($user, $medecin_data);
-        }
-
-        // Retourne l'utilisateur seul si la ligne n'existe pas (ce qui ne devrait pas arriver selon vous)
-        return $user;
     }
 
 

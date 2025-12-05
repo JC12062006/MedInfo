@@ -23,7 +23,7 @@ class Consultation{
         return $req->execute();
     }
 
-    public function getConsultationsMedecin($id_utilisateur){
+    public function getConsultationsMedecin($id_medecin){
 
     }
 

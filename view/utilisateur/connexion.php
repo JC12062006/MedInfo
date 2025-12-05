@@ -29,7 +29,7 @@
                 <a href="index.php?page=inscription" class="medinfo-link">Créer un compte</a>
             </p>
 
-            <form method="POST" action="index.php?page=controllerPatient" class="medinfo-login-form">
+            <form method="POST" action="index.php?page=utilisateurController" class="medinfo-login-form">
                 <!-- Email -->
                 <div class="medinfo-form-group">
                     <label for="email">Adresse e-mail</label>
@@ -40,13 +40,7 @@
                 <div class="medinfo-form-group">
                     <label for="mdp">Mot de passe</label>
                     <div class="medinfo-password-wrapper">
-                        <input
-                            type="password"
-                            id="mdp"
-                            name="mdp"
-                            placeholder="Votre mot de passe"
-                            required
-                        >
+                        <input type="password" id="mdp" name="mdp" placeholder="Votre mot de passe" required>
 
                     </div>
                     <div class="medinfo-login-meta-row">

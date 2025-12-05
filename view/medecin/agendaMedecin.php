@@ -24,8 +24,7 @@ require_once ROOT . 'controller/rendez_vous/readRdvMedecins.php';
                                 'a_confirmer' => 'À confirmer',
                                 'annulé' => 'Annulé',
                                 'honoré' => 'Honoré',
-                                'absent' => 'Absent',
-                                default => 'Inconnu'
+                                'absent' => 'Absent'
                             } ?>
                         </span>
                     </div>
