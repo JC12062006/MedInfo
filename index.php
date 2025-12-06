@@ -12,8 +12,8 @@ switch($page){
     case 'dashboardMedecin' :
         require_once("view/medecin/dashboardMedecin.php");
         break;
-    case 'demandesRdv' :
-        require_once("view/medecin/demandesRdv.php");
+    case 'gestionRdv' :
+        require_once("view/medecin/gestionRdv.php");
         break;
     case 'disponibilites' :
         require_once("view/medecin/disponibilites.php");
@@ -57,8 +57,8 @@ switch($page){
     case 'consultationMedecin' :
         require_once("view/medecin/consultationMedecin.php");
         break;
-    case '' :
-        require_once("");
+    case 'controllerRdv' :
+        require_once("controller/rendez_vous/controller.rdv.php");
         break;
     case '' :
         require_once("");

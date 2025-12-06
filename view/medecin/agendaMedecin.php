@@ -47,7 +47,7 @@ require_once ROOT . 'controller/rendez_vous/readRdvMedecins.php';
                     <div class="rdv-card-actions">
                         <button class="medinfo-btn-ghost rdv-action-detail"><a href="index.php?page=ajouterConsultation&id_patient=<?php echo $rdv['id_patient']?>">Démarrer</a></button>
                         <?php if ($rdv['rdv_statut'] === 'a_confirmer'): ?>
-                            <button class="medinfo-btn-primary-nav rdv-action-confirm">Confirmer</button>
+                            <button class="medinfo-btn-primary-nav rdv-action-confirm"><a href="index.php?page=controllerRdv"> Confirmer</a></button>
                         <?php endif; ?>
                     </div>
                 </div>

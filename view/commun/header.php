@@ -6,7 +6,8 @@
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    
     <!-- STyles -->    
     <link rel="stylesheet" href="public/styles.connexion.css">
     <link rel="stylesheet" href="public/styles.inscription.css">
@@ -18,6 +19,7 @@
     <link rel="stylesheet" href="public/styles.agenda.css">
     <link rel="stylesheet" href="public/styles.ajoutConsultation.css">
     <link rel="stylesheet" href="public/styles.consultations.css">
+    <link rel="stylesheet" href="public\styles.rdvMedecin.css">
 
 
     <title>MedInfo</title>
@@ -49,7 +51,7 @@
                                 <a href="index.php?page=medecins" class="medinfo-nav-link">Médecins</a>
                             <?php }else{ ?>
                                 <a href="index.php?page=agenda" class="medinfo-nav-link">Mon agenda</a>
-                                <a href="index.php?page=demandesRdv" class="medinfo-nav-link">Gestion Rendez-Vous</a>
+                                <a href="index.php?page=gestionRdv" class="medinfo-nav-link">Gestion Rendez-Vous</a>
                                 <a href="index.php?page=consultationMedecin" class="medinfo-nav-link">Historique Consultations</a>
                                 <a href="index.php?page=ajouterConsultation" class="medinfo-nav-link">Demarrer une Consultations</a>
                             <?php } ?>
