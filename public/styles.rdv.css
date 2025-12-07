@@ -1,0 +1,63 @@
+.rdv-section {
+    max-width: 700px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.rdv-section h2 {
+    color: var(--medinfo-primary);
+    margin-bottom: 1rem;
+}
+
+.rdv-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.rdv-form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.rdv-form-group label {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.rdv-form-group select,
+.rdv-form-group textarea {
+    padding: 0.8rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-family: inherit;
+}
+
+.rdv-form-group select:focus,
+.rdv-form-group textarea:focus {
+    border-color: var(--medinfo-primary);
+    outline: none;
+}
+
+.required {
+    color: var(--medinfo-danger);
+}
+
+.btn-primary {
+    padding: 1rem;
+    background: var(--medinfo-primary);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-primary:hover {
+    background: var(--medinfo-primary-dark);
+}

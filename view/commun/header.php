@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="public/styles.ajoutConsultation.css">
     <link rel="stylesheet" href="public/styles.consultations.css">
     <link rel="stylesheet" href="public\styles.rdvMedecin.css">
+    <link rel="stylesheet" href="public/styles.rdv.css">
 
 
     <title>MedInfo</title>
