@@ -35,7 +35,7 @@ require_once ROOT . 'controller/creneau/selectCreneauController.php';
       </div>
 
       <input type="hidden" name="origine" value="patient">
-      <input type="hidden" name="id_patient" value="<?= $_SESSION['user']['id_utilisateur']; ?>">
+      <input type="hidden" name="id_patient" value="<?= $_SESSION['user']['id_patient']; ?>">
       <input type="hidden" name="action" value="ajouter">
 
       <div class="rdv-form-actions">
