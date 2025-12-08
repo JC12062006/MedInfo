@@ -1,5 +1,5 @@
-<?php
-require_once ROOT . 'controller/rendez_vous/controller.rdv.php';
+<?php 
+require_once ROOT . 'controller/creneau/selectCreneauController.php'; 
 ?>
 
 <!DOCTYPE html>
@@ -7,51 +7,42 @@ require_once ROOT . 'controller/rendez_vous/controller.rdv.php';
 <head>
     <meta charset="UTF-8">
     <title>Prendre un rendez-vous - MedInfo</title>
+    <link rel="stylesheet" href="public/css/styles.rdv.css"> <!-- adapte ce chemin -->
 </head>
 <body>
 
 <main class="rdv-container">
-    <section class="rdv-section">
-        <h2>📅 Prendre un rendez-vous</h2>
-        <p>Choisissez un créneau disponible et précisez le motif de votre consultation.</p>
+  <section class="rdv-section">
+    <h2>📅 Prendre un rendez-vous</h2>
 
-        <form action="index.php?page=controller.rdv" method="POST" class="rdv-form">
+    <form action="index.php?page=rdvPatient" method="POST" class="rdv-form">
+      <div class="rdv-form-group">
+        <label for="id_creneau">Créneau disponible <span class="required">*</span></label>
+        <select id="id_creneau" name="id_creneau" required>
+          <option value="">-- Sélectionnez un créneau --</option>
+          <?php foreach ($creneaux as $c) { ?>
+            <option value="<?= $c['id_creneau']; ?>">
+              <?= date('d/m/Y H:i', strtotime($c['date_heure_debut'])); ?> 
+              avec Dr. <?= $c['medecin_nom']; ?> <?= $c['medecin_prenom']; ?>
+            </option>
+          <?php } ?>
+        </select>
+      </div>
 
-            <!-- Sélection du créneau -->
-            <div class="rdv-form-group">
-                <label for="id_creneau">Créneau disponible <span class="required">*</span></label>
-                <select id="id_creneau" name="id_creneau" required>
-                    <option value="">-- Sélectionnez un créneau --</option>
-                    <?php if (!empty($creneaux)): ?>
-                        <?php foreach ($creneaux as $c): ?>
-                            <option value="<?= htmlspecialchars($c['id_creneau']); ?>">
-                                <?= date('d/m/Y H:i', strtotime($c['date_heure_debut'])); ?> 
-                                avec Dr. <?= htmlspecialchars($c['medecin_nom']); ?> <?= htmlspecialchars($c['medecin_prenom']); ?>
-                            </option>
-                        <?php endforeach; ?>
-                    <?php else: ?>
-                        <option disabled>Aucun créneau disponible pour le moment</option>
-                    <?php endif; ?>
-                </select>
-            </div>
+      <div class="rdv-form-group">
+        <label for="motif">Motif du rendez-vous <span class="required">*</span></label>
+        <textarea id="motif" name="motif" required placeholder="Motif du rendez-vous"></textarea>
+      </div>
 
-            <!-- Motif -->
-            <div class="rdv-form-group">
-                <label for="motif">Motif du rendez-vous <span class="required">*</span></label>
-                <textarea id="motif" name="motif" rows="4" placeholder="Ex: Consultation annuelle, suivi traitement..." required></textarea>
-            </div>
+      <input type="hidden" name="origine" value="patient">
+      <input type="hidden" name="id_patient" value="<?= $_SESSION['user']['id_utilisateur']; ?>">
+      <input type="hidden" name="action" value="ajouter">
 
-            <!-- Champs cachés -->
-            <input type="hidden" name="origine" value="patient">
-            <input type="hidden" name="id_patient" value="<?= $_SESSION['user']['id_utilisateur']; ?>">
-            <input type="hidden" name="action" value="ajouter">
-
-            <!-- Bouton -->
-            <div class="rdv-form-actions">
-                <button type="submit" class="btn-primary">✅ Confirmer ma demande</button>
-            </div>
-        </form>
-    </section>
+      <div class="rdv-form-actions">
+        <button type="submit" class="btn-primary">✅ Confirmer</button>
+      </div>
+    </form>
+  </section>
 </main>
 
 </body>

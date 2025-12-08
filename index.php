@@ -60,12 +60,13 @@ switch($page){
     case 'controllerRdv' :
         require_once("controller/rendez_vous/controller.rdv.php");
         break;
-    case '' :
-        require_once("");
+    case 'creneauxMedecin' :
+        require_once("view/medecin/creneauxMedecin.php");
         break;
-    case '' :
-        require_once("");
+    case 'rdvPatient' :
+        require_once("view/patient/rdvPatient.php");
         break;
+
 
     default:
         include ('view/accueil.php');

@@ -192,3 +192,19 @@ INSERT INTO rendez_vous (date_creation, motif, statut, origine, fk_id_patient, f
 -- Rendez-vous 2 (Patient 2, utilise Créneau ID 6)
 INSERT INTO rendez_vous (date_creation, motif, origine, fk_id_patient, fk_id_creneau) VALUES
 (CURRENT_DATE(), 'Bilan de santé général', 'Téléphone', 1, 6);
+
+-- Créneaux pour le médecin 1 (Cardiologue) dans la salle 1
+INSERT INTO creneau (date_heure_debut, date_heure_fin, statut, disponibilite, fk_id_medecin, fk_id_salle) VALUES
+('2025-12-15 09:00:00', '2025-12-15 09:30:00', 'libre', 1, 1, 1),
+('2025-12-15 09:30:00', '2025-12-15 10:00:00', 'libre', 1, 1, 1),
+('2025-12-15 10:00:00', '2025-12-15 10:30:00', 'libre', 1, 1, 1);
+
+-- Créneaux pour le médecin 2 (Dermatologue) dans la salle 2
+INSERT INTO creneau (date_heure_debut, date_heure_fin, statut, disponibilite, fk_id_medecin, fk_id_salle) VALUES
+('2025-12-16 14:00:00', '2025-12-16 14:30:00', 'libre', 1, 2, 2),
+('2025-12-16 14:30:00', '2025-12-16 15:00:00', 'libre', 1, 2, 2);
+
+-- Créneaux pour le médecin 3 (Médecin généraliste) dans la salle 3
+INSERT INTO creneau (date_heure_debut, date_heure_fin, statut, disponibilite, fk_id_medecin, fk_id_salle) VALUES
+('2025-12-17 09:00:00', '2025-12-17 09:30:00', 'libre', 1, 3, 3),
+('2025-12-17 09:30:00', '2025-12-17 10:00:00', 'libre', 1, 3, 3);

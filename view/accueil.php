@@ -71,9 +71,17 @@ if (empty($_SESSION['user'])) {
                 <span class="icon">📅</span>
                 <span class="text">Prendre rendez-vous</span>
             </a>
+            <a href="index.php?page=rdvPatient" class="action-card">
+                <span class="icon">📋</span>
+                <span class="text">Mes rendez-vous</span>
+            </a>
             <a href="index.php?page=monEspace" class="action-card">
                 <span class="icon">🩺</span>
                 <span class="text">Mon espace santé</span>
+            </a>
+            <a href="index.php?page=mesConsultations" class="action-card">
+                <span class="icon">📖</span>
+                <span class="text">Mes consultations</span>
             </a>
             <a href="index.php?page=mesDocuments" class="action-card">
                 <span class="icon">📂</span>
@@ -82,6 +90,7 @@ if (empty($_SESSION['user'])) {
         </div>
     </section>
     <?php
+
 
 } elseif ($_SESSION['user']['role'] === 'Medecin') {
     // ===========================
@@ -100,9 +109,13 @@ if (empty($_SESSION['user'])) {
                 <span class="icon">📅</span>
                 <span class="text">Mon agenda</span>
             </a>
-            <a href="index.php?page=demandesRdv" class="action-card">
-                <span class="icon">📨</span>
-                <span class="text">Demandes de rendez-vous</span>
+            <a href="index.php?page=gestionRdv" class="action-card">
+                <span class="icon">📋</span>
+                <span class="text">Gestion des rendez-vous</span>
+            </a>
+            <a href="index.php?page=creneauxMedecin" class="action-card">
+                <span class="icon">🗓️</span>
+                <span class="text">Mes créneaux</span>
             </a>
             <a href="index.php?page=consultationMedecin" class="action-card">
                 <span class="icon">🩺</span>
@@ -112,8 +125,13 @@ if (empty($_SESSION['user'])) {
                 <span class="icon">➕</span>
                 <span class="text">Démarrer une consultation</span>
             </a>
+            <a href="index.php?page=mesPatients" class="action-card">
+                <span class="icon">👥</span>
+                <span class="text">Mes patients</span>
+            </a>
         </div>
     </section>
     <?php
+
 }
 ?>
