@@ -9,8 +9,8 @@ require_once ROOT . 'model/utilisateur/model.utilisateur.php';
 if(isset($_POST['action'])){
     $utilisateurController = new Utilisateur($bdd);
     $user = $utilisateurController->checkLogin($_POST['email'], $_POST['mdp']);
-
-    switch ($user['role']) {
+    if($user){
+        switch ($user['role']) {
         case 'Patient':
             $patientController = new Patient($bdd);
             $patient = array_merge($user, $patientController->GetPatientOncheckLogin($user));
@@ -30,6 +30,11 @@ if(isset($_POST['action'])){
                 header('Location: index.php?page=accueil'); 
             }
             break;            
+    }
+    }else{
+        $_SESSION['login_error'] = "Identifiants incorrects. Veuillez réessayer.";
+        header('Location: https://127.0.0.1/promo300/medinfo/index.php?page=connexion');
+        exit;
     }
 }
 
