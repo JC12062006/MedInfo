@@ -1,5 +1,5 @@
 <?php
-require_once ROOT . 'controller/rendez_vous/controller.rdv.php';
+require_once ROOT . 'controller/rendez_vous/readRdvPatient.php';
 
 // Le controller prépare déjà $rdvs via showRdvPatient()
 ?>
@@ -27,14 +27,14 @@ require_once ROOT . 'controller/rendez_vous/controller.rdv.php';
                 </tr>
             </thead>
             <tbody>
-                <?php if (!empty($rdvs)): ?>
-                    <?php foreach ($rdvs as $rdv): ?>
+                <?php if (!empty($rdvPatients)): ?>
+                    <?php foreach ($rdvPatients as $rdv): ?>
                         <tr>
                             <td><?= date('d/m/Y', strtotime($rdv['date_heure_debut'])); ?></td>
                             <td><?= date('H:i', strtotime($rdv['date_heure_debut'])); ?></td>
                             <td>Dr. <?= htmlspecialchars($rdv['medecin_nom']); ?> <?= htmlspecialchars($rdv['medecin_prenom']); ?></td>
                             <td><?= htmlspecialchars($rdv['motif']); ?></td>
-                            <td><?= htmlspecialchars($rdv['statut']); ?></td>
+                            <td><?= htmlspecialchars($rdv['rdv_statut']); ?></td>
                         </tr>
                     <?php endforeach; ?>
                 <?php else: ?>

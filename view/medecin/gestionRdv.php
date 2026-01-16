@@ -67,7 +67,7 @@ function getStatusLabel($statut) {
         
         <div class="medinfo-history-header">
             <h2>Gestion des Rendez-vous</h2>
-            <p>Gérez vos consultations du jour, contactez vos patients et confirmez les demandes.</p>
+            <p>Gérez vos rendez-vous, contactez vos patients et confirmez les demandes.</p>
         </div>
 
         <div class="table-responsive">
